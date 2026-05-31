@@ -41,7 +41,7 @@ export default function Navbar() {
                 src="/logo.svg"
                 alt="Vaatira"
                 width={150}
-                height={30}
+                height={31}
                 priority
             />
             </Link>
