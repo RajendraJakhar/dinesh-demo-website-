@@ -13,65 +13,69 @@ export default function Navbar() {
     { label: "Services", href: "/services" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "White Label", href: "/white-label" },
-    { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
   ];
 
   return (
     <>
       <header
-         className="
-          fixed top-0 left-0 w-full z-50
-          bg-[#0P1090]/95
-          backdrop-blur-xl
-          border-b border-white/10
-       "
+        className="
+        fixed top-0 left-0 w-full z-50
+        bg-[#050816]/90
+        backdrop-blur-xl
+        border-b border-white/5
+        "
       >
-      
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="h-[62px] flex items-center justify-between">
-
+          <div className="h-[78px] flex items-center justify-between">
+            
             {/* Logo */}
             <Link
               href="/"
-              className="bg-white rounded-xl px-3 py-2 shadow-lg"
+              className="relative flex items-center group"
             >
+              <div
+                className="
+                absolute
+                -inset-4
+                bg-orange-500/10
+                blur-2xl
+                opacity-0
+                group-hover:opacity-100
+                transition-all
+                duration-500
+                rounded-full
+                "
+              />
 
               <Image
-                src="/logo.svg"
+                src="/Logo.svg"
                 alt="Vaatira"
-                width={150}
-                height={31}
+                width={165}
+                height={40}
                 priority
-            />
+                className="relative z-10"
+              />
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-10">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="
-                  relative
+                  className={`
                   text-[15px]
                   font-medium
-                  text-white/80
-                  hover:text-white
-                  transition-all
+                  transition-colors
                   duration-300
 
-                  after:absolute
-                  after:left-0
-                  after:-bottom-1
-                  after:h-[2px]
-                  after:w-0
-                  after:bg-orange-500
-                  after:transition-all
-                  after:duration-300
-
-                  hover:after:w-full
-                  "
+                  ${
+                    item.label === "White Label"
+                      ? "text-orange-400"
+                      : "text-slate-300 hover:text-white"
+                  }
+                  `}
                 >
                   {item.label}
                 </Link>
@@ -85,96 +89,118 @@ export default function Navbar() {
                 className="
                 px-5
                 py-2.5
+
                 rounded-full
+
+                bg-orange-500
+                hover:bg-orange-400
+
+                text-white
                 text-sm
                 font-semibold
-                text-white
-
-                bg-gradient-to-r
-                from-orange-500
-                to-orange-600
-
-                shadow-[0_10px_30px_rgba(249,115,22,0.35)]
-
-                hover:scale-105
-                hover:shadow-[0_15px_45px_rgba(249,115,22,0.5)]
 
                 transition-all
                 duration-300
+
+                hover:-translate-y-0.5
+
+                shadow-[0_10px_30px_rgba(249,115,22,0.25)]
                 "
               >
-                Book Consultation
+                Schedule Strategy Call
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Button */}
             <button
               onClick={() => setOpen(!open)}
               className="
               lg:hidden
-              text-white
-              p-2
-              rounded-lg
+
+              p-2.5
+
+              rounded-xl
+
               border
               border-white/10
+
               bg-white/5
+
+              text-white
               "
             >
-              {open ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={22} /> : <Menu size={22} />}
             </button>
-
           </div>
         </div>
       </header>
 
       {/* Mobile Menu */}
-      {open && (
-        <div
-          className="
-          fixed inset-0 z-40
-          bg-[#050816]/95
-          backdrop-blur-3xl
-          lg:hidden
-          "
-        >
-          <div className="pt-24 px-8 flex flex-col gap-8">
+      <div
+        className={`
+        fixed inset-0 z-40 lg:hidden
 
+        bg-[#050816]
+
+        transition-all duration-300
+
+        ${
+          open
+            ? "opacity-100 visible"
+            : "opacity-0 invisible"
+        }
+        `}
+      >
+        <div className="pt-28 px-8 flex flex-col">
+          <div className="flex flex-col gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="
-                text-3xl
-                font-bold
+                className={`
+                text-4xl
+                font-semibold
                 tracking-tight
-                text-white
-                "
+
+                ${
+                  item.label === "White Label"
+                    ? "text-orange-400"
+                    : "text-white"
+                }
+                `}
               >
                 {item.label}
               </Link>
             ))}
-
-            <a
-              href="#contact"
-              className="
-              mt-4
-              text-center
-              py-4
-              rounded-full
-              bg-gradient-to-r
-              from-orange-500
-              to-orange-600
-              text-white
-              font-semibold
-              "
-            >
-              Book Consultation
-            </a>
-
           </div>
+
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="
+            mt-12
+
+            text-center
+
+            py-4
+
+            rounded-full
+
+            bg-orange-500
+            hover:bg-orange-400
+
+            text-white
+            font-semibold
+
+            transition-all
+            duration-300
+            "
+          >
+            Schedule Strategy Call
+          </a>
         </div>
-      )}
+      </div>
     </>
   );
 }

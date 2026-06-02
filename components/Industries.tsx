@@ -23,7 +23,7 @@ export default function Industries() {
   ];
 
   return (
-    <section className="py-28 bg-[#070b18]">
+    <section className="py-10 bg-[#070b18]">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}

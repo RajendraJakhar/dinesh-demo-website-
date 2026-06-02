@@ -1,6 +1,6 @@
 export default function WhiteLabel() {
   return (
-    <section className="py-28 bg-[#050816]">
+    <section className="py-10 bg-[#050816]">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}

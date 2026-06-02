@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
 
             <Image
-              src="/logo.svg"
+              src="/Logo.svg"
               alt="Vaatira"
               width={200}
               height={60}

@@ -2,68 +2,66 @@ export default function WhoWeHelp() {
   const industries = [
     {
       title: "Consultants",
-      description:
-        "Generate qualified consultation calls and build a predictable client acquisition system.",
+      description: "Generate qualified consultation calls.",
     },
     {
       title: "Coaches",
-      description:
-        "Automate lead nurturing, appointment booking and client onboarding.",
+      description: "Automate lead nurturing and onboarding.",
     },
     {
       title: "Solar Companies",
-      description:
-        "Build lead generation systems that convert inquiries into booked appointments.",
+      description: "Convert inquiries into booked appointments.",
     },
     {
       title: "Agencies",
-      description:
-        "Scale delivery capacity through CRM systems, automation and white-label execution.",
+      description: "Scale delivery through systems and white-label execution.",
     },
   ];
 
   return (
-    <section className="py-24 bg-[#050816] border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-10 border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-6">
 
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl">
 
-          <p className="text-orange-500 uppercase tracking-[0.2em] text-sm mb-4">
+          <p className="text-orange-400 uppercase tracking-[0.25em] text-sm mb-4">
             Who We Help
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            Built For Service Businesses
-            That Want Predictable Growth.
+          <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.04em]">
+            Built For Businesses That Need
+            Predictable Client Acquisition.
           </h2>
 
-          <p className="text-gray-400 mt-6 text-lg">
-            We don't work with everyone.
-            We specialize in businesses that rely on lead generation,
-            appointments and client acquisition.
+          <p className="mt-6 text-zinc-400 text-lg">
+            We partner with service businesses that rely on
+            appointments, lead generation and client acquisition.
           </p>
 
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="mt-16 border-t border-white/10">
 
           {industries.map((industry) => (
             <div
               key={industry.title}
               className="
-              p-8
-              rounded-3xl
-              border
+              flex
+              flex-col
+              md:flex-row
+              md:items-center
+              justify-between
+              gap-4
+              py-8
+              border-b
               border-white/10
-              hover:border-orange-500/30
-              transition
               "
             >
-              <h3 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold">
                 {industry.title}
               </h3>
 
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-zinc-400 max-w-xl">
                 {industry.description}
               </p>
             </div>

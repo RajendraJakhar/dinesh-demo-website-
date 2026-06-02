@@ -6,7 +6,7 @@ export default function MobileStickyCTA() {
   const message =
     "Hi Vaatira, I would like to discuss building a growth system for my business.";
 
-  return (
+  return null; (
     <div
       className="
       fixed

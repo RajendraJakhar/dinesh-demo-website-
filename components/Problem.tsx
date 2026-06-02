@@ -15,7 +15,7 @@ export default function Problem() {
   ];
 
   return (
-    <section className="py-24 bg-[#070b18]">
+    <section className="py-10 bg-[#070b18]">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="max-w-3xl mb-16">
