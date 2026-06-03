@@ -33,117 +33,86 @@ export default function GrowthSystem() {
   ];
 
   return (
-    <section className="py-28 bg-[#050816]">
+    <section className="py-14 bg-[#050816] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Heading */}
-        <div className="max-w-5xl mb-20">
-          <p className="text-orange-500 uppercase tracking-widest text-sm mb-4">
+        {/* Header */}
+        <div className="max-w-5xl mb-14">
+          <p className="text-orange-500 uppercase tracking-[0.25em] text-sm mb-5">
             The Growth System
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
             We Don't Sell Marketing.
           </h2>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-400 mt-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-zinc-300 mt-2">
             We Build Predictable Systems.
           </h2>
+
+          <p className="mt-6 text-xl text-zinc-400 max-w-3xl leading-relaxed">
+            Every stage is connected into a single growth infrastructure
+            designed to generate, nurture and convert leads consistently.
+          </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Timeline */}
+        <div className="border-t border-white/10">
 
           {steps.map((step) => (
             <div
-              key={step.title}
+              key={step.number}
               className="
-              group
-              relative
-              overflow-hidden
-              rounded-[32px]
-              border
+              grid
+              md:grid-cols-12
+              gap-10
+              py-5
+              border-b
               border-white/10
-              bg-white/[0.03]
-              p-8
-              hover:border-orange-500/30
+              hover:bg-white/[0.02]
               transition-all
               duration-300
               "
             >
-              {/* Glow */}
-              <div
-                className="
-                absolute
-                top-0
-                right-0
-                h-32
-                w-32
-                bg-orange-500/10
-                blur-3xl
-                opacity-0
-                group-hover:opacity-100
-                transition
-                "
-              />
 
-              <div
-                className="
-                w-14
-                h-14
-                rounded-full
-                bg-orange-500
-                flex
-                items-center
-                justify-center
-                text-black
-                font-bold
-                text-lg
-                mb-6
-                "
-              >
-                {step.number}
+              {/* Left */}
+              <div className="md:col-span-4 flex items-center gap-6">
+
+                <div
+                  className="
+                  w-12
+                  h-12
+                  rounded-full
+                  bg-orange-500
+                  text-black
+                  font-bold
+                  flex
+                  items-center
+                  justify-center
+                  shrink-0
+                  "
+                >
+                  {step.number}
+                </div>
+
+                <h3 className="text-2xl font-semibold">
+                  {step.title}
+                </h3>
+
               </div>
 
-              <h3 className="text-2xl font-semibold mb-4">
-                {step.title}
-              </h3>
+              {/* Right */}
+              <div className="md:col-span-8">
 
-              <p className="text-gray-400 leading-relaxed">
-                {step.desc}
-              </p>
+                <p className="text-zinc-400 text-lg leading-relaxed max-w-3xl">
+                  {step.desc}
+                </p>
+
+              </div>
+
             </div>
           ))}
 
-        </div>
-
-        {/* Bottom CTA */}
-        <div
-          className="
-          mt-16
-          text-center
-          "
-        >
-          <p className="text-gray-400 mb-6">
-            Every stage is connected into one predictable growth engine.
-          </p>
-
-          <a
-            href="#contact"
-            className="
-            inline-flex
-            px-8
-            py-4
-            rounded-full
-            bg-orange-500
-            hover:bg-orange-600
-            transition
-            text-black
-            font-semibold
-            "
-          >
-            Book Strategy Call
-          </a>
         </div>
 
       </div>

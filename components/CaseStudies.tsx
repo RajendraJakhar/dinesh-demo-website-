@@ -1,142 +1,157 @@
 export default function CaseStudies() {
   const studies = [
     {
-      industry: "Consulting",
-      title: "Built A Predictable Lead Generation System",
-      result: "+147% Qualified Leads",
-      description:
-        "Implemented CRM, automation and appointment booking workflows to create a predictable client acquisition process.",
+      metric: "+312%",
+      title: "Qualified Leads",
+      company: "Solar Company",
+      challenge:
+        "Lead inquiries were coming in but there was no structured system to track, nurture and convert prospects.",
+      solution:
+        "Implemented CRM, automation workflows, lead capture funnels and appointment booking systems.",
+      result:
+        "Generated a predictable pipeline with significantly higher lead quality and conversion rates.",
     },
     {
-      industry: "Solar Company",
-      title: "Improved Lead Tracking & Follow-Ups",
-      result: "+82% Appointment Rate",
-      description:
-        "Integrated lead capture, CRM pipelines and automated follow-up systems to increase conversions.",
+      metric: "₹18L+",
+      title: "Pipeline Generated",
+      company: "Consulting Firm",
+      challenge:
+        "The business relied entirely on referrals and had no predictable lead generation process.",
+      solution:
+        "Built a complete acquisition system with landing pages, CRM implementation and automated follow-ups.",
+      result:
+        "Created a scalable sales pipeline capable of generating consistent opportunities every month.",
     },
     {
-      industry: "Agency",
-      title: "White-Label Fulfillment Partnership",
-      result: "40+ Projects Delivered",
-      description:
-        "Provided backend execution support allowing the agency to scale without increasing internal overhead.",
+      metric: "40+",
+      title: "Hours Saved Monthly",
+      company: "Agency Partner",
+      challenge:
+        "Manual onboarding, reporting and fulfillment processes were slowing growth.",
+      solution:
+        "Introduced white-label execution workflows and automation systems.",
+      result:
+        "Reduced operational workload and improved delivery efficiency across client accounts.",
     },
   ];
 
   return (
-    <section className="py-28 bg-[#050816]">
+    <section className="py-13 bg-[#050816] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-4xl mb-16">
-          <p className="text-orange-500 uppercase tracking-widest text-sm mb-4">
+
+        <div className="max-w-5xl mb-11">
+          <p className="text-orange-500 uppercase tracking-[0.25em] text-sm mb-5">
             Case Studies
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-            Results That Build
+          <h2 className="text-3xl text-[2.3rem] font-bold leading-tight">
+            Real Systems.
           </h2>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-400 mt-2">
-            Trust & Authority.
+          <h2 className="text-3xl text-[2.3rem] font-bold text-zinc-200 mt-2">
+            Real Business Outcomes.
           </h2>
         </div>
 
-        {/* Cards */}
-        <div className="grid lg:grid-cols-3 gap-6">
+        {/* Case Studies */}
 
-          {studies.map((study) => (
+        <div className="space-y-12">
+
+          {studies.map((study, index) => (
             <div
-              key={study.title}
+              key={index}
               className="
-                p-8
-                rounded-3xl
-                border
-                border-white/10
-                bg-white/[0.03]
-                hover:border-orange-500/30
-                transition-all
+              grid
+              lg:grid-cols-12
+              gap-10
+              items-center
               "
             >
-              <span
-                className="
-                  inline-block
-                  px-4
-                  py-2
-                  rounded-full
-                  bg-orange-500/10
+              {/* Metric Side */}
+
+              <div className="lg:col-span-4">
+
+                <div
+                  className="
+                  text-4xl
+                  md:text-6xl
+                  font-bold
                   text-orange-500
-                  text-sm
-                  mb-6
-                "
-              >
-                {study.industry}
-              </span>
+                  leading-none
+                  "
+                >
+                  {study.metric}
+                </div>
 
-              <h3 className="text-2xl font-semibold mb-4">
-                {study.title}
-              </h3>
+                <p
+                  className="
+                  mt-4
+                  text-lg
+                  uppercase
+                  tracking-[0.2em]
+                  text-zinc-500
+                  "
+                >
+                  {study.title}
+                </p>
 
-              <div className="text-4xl font-bold text-orange-500 mb-4">
-                {study.result}
               </div>
 
-              <p className="text-gray-400 leading-relaxed mb-6">
-                {study.description}
-              </p>
+              {/* Content Side */}
 
-              <button
+              <div
                 className="
-                  text-orange-500
-                  font-medium
-                  hover:translate-x-1
-                  transition-transform
+                lg:col-span-8
+                border-l
+                border-white/10
+                pl-8
                 "
               >
-                View Case Study →
-              </button>
+                <h3 className="text-3xl font-semibold mb-8">
+                  {study.company}
+                </h3>
+
+                <div className="space-y-8">
+
+                  <div>
+                    <p className="text-orange-500 text-sm uppercase tracking-widest mb-2">
+                      Challenge
+                    </p>
+
+                    <p className="text-zinc-400 leading-relaxed">
+                      {study.challenge}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-orange-500 text-sm uppercase tracking-widest mb-2">
+                      Solution
+                    </p>
+
+                    <p className="text-zinc-400 leading-relaxed">
+                      {study.solution}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-orange-500 text-sm uppercase tracking-widest mb-2">
+                      Result
+                    </p>
+
+                    <p className="text-white leading-relaxed">
+                      {study.result}
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
             </div>
           ))}
 
-        </div>
-
-        {/* Bottom CTA */}
-        <div
-          className="
-            mt-16
-            p-10
-            rounded-3xl
-            border
-            border-white/10
-            bg-gradient-to-r
-            from-[#0b1228]
-            to-[#131b34]
-            text-center
-          "
-        >
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
-            Want Similar Results?
-          </h3>
-
-          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-            Let's design a growth system tailored to your business goals,
-            industry and sales process.
-          </p>
-
-          <button
-            className="
-              px-8
-              py-4
-              rounded-full
-              bg-orange-500
-              hover:bg-orange-600
-              transition
-              text-black
-              font-semibold
-            "
-          >
-            Book Consultation
-          </button>
         </div>
 
       </div>

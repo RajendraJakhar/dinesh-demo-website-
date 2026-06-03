@@ -2,71 +2,110 @@ export default function WhoWeHelp() {
   const industries = [
     {
       title: "Consultants",
-      description: "Generate qualified consultation calls.",
+      description:
+        "Generate qualified consultation calls with a predictable acquisition system.",
     },
     {
       title: "Coaches",
-      description: "Automate lead nurturing and onboarding.",
+      description:
+        "Automate lead nurturing, appointment booking and client onboarding.",
     },
     {
       title: "Solar Companies",
-      description: "Convert inquiries into booked appointments.",
+      description:
+        "Convert inquiries into booked appointments with structured follow-up systems.",
     },
     {
       title: "Agencies",
-      description: "Scale delivery through systems and white-label execution.",
+      description:
+        "Scale delivery capacity through automation and white-label execution.",
     },
   ];
 
   return (
-    <section className="py-10 border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6">
-
-        <div className="max-w-3xl">
-
-          <p className="text-orange-400 uppercase tracking-[0.25em] text-sm mb-4">
-            Who We Help
+    <section className="py-11 border-t border-white/5 bg-[#050816]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="max-w-4xl">
+          <p className="text-orange-400 uppercase tracking-[0.3em] text-sm font-medium mb-5">
+            WHO WE WORK BEST WITH
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold tracking-[-0.04em]">
-            Built For Businesses That Need
-            Predictable Client Acquisition.
+          <h2 className="text-4xl md:text-4xl font-bold tracking-[-0.04em] leading-tight text-white">
+            Built For Growth-Driven
+            <br />
+            Service Businesses.
           </h2>
 
-          <p className="mt-6 text-zinc-400 text-lg">
-            We partner with service businesses that rely on
-            appointments, lead generation and client acquisition.
+          <p className="mt-5 text-zinc-400 text-lg max-w-2xl leading-relaxed">
+            VAATIRA partners with businesses that rely on lead generation,
+            appointments and client acquisition to scale predictably.
           </p>
-
         </div>
 
-        <div className="mt-16 border-t border-white/10">
-
+        {/* Industries */}
+        <div className="mt-6 border-t border-white/10">
           {industries.map((industry) => (
             <div
               key={industry.title}
               className="
-              flex
-              flex-col
-              md:flex-row
-              md:items-center
-              justify-between
-              gap-4
-              py-8
-              border-b
-              border-white/10
+                group
+                py-5
+                border-b
+                border-white/10
+                transition-all
+                duration-300
+                hover:border-orange-500/20
               "
             >
-              <h3 className="text-2xl font-semibold">
-                {industry.title}
-              </h3>
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                
+                {/* Left */}
+                <div className="flex items-center gap-3">
+                  <span
+                    className="
+                    text-orange-400
+                    text-xl
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                    "
+                  >
+                    →
+                  </span>
 
-              <p className="text-zinc-400 max-w-xl">
-                {industry.description}
-              </p>
+                  <h3
+                    className="
+                    text-xl
+                    md:text-2xl
+                    font-semibold
+                    text-white
+                    transition-colors
+                    duration-300
+                    group-hover:text-orange-400
+                    "
+                  >
+                    {industry.title}
+                  </h3>
+                </div>
+
+                {/* Right */}
+                <p
+                  className="
+                  max-w-xl
+                  text-zinc-400
+                  leading-relaxed
+                  transition-colors
+                  duration-300
+                  group-hover:text-zinc-300
+                  "
+                >
+                  {industry.description}
+                </p>
+              </div>
             </div>
           ))}
-
         </div>
 
       </div>

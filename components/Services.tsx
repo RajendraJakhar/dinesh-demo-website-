@@ -1,151 +1,159 @@
 export default function Services() {
   const services = [
     {
+      number: "01",
       title: "Lead Generation",
       description:
-        "Build predictable lead pipelines through SEO, LinkedIn outreach, paid campaigns and conversion-focused landing pages.",
+        "Build predictable lead pipelines through SEO, LinkedIn outreach, paid acquisition and conversion-focused landing pages.",
     },
     {
+      number: "02",
       title: "CRM Implementation",
       description:
-        "Set up scalable CRM systems that organize leads, automate workflows and improve sales visibility.",
+        "Create scalable CRM systems that organize leads, automate workflows and improve sales visibility.",
     },
     {
+      number: "03",
       title: "Marketing Automation",
       description:
-        "Reduce manual work with automated follow-ups, lead nurturing and customer communication systems.",
+        "Reduce manual work through automated follow-ups, lead nurturing and customer communication systems.",
     },
     {
+      number: "04",
       title: "WhatsApp Automation",
       description:
-        "Automate lead qualification, follow-ups and appointment reminders directly through WhatsApp.",
+        "Automate lead qualification, reminders and customer engagement directly through WhatsApp.",
     },
     {
+      number: "05",
       title: "Appointment Booking Systems",
       description:
-        "Create frictionless booking experiences using Calendly and CRM-integrated scheduling workflows.",
+        "Streamline scheduling with CRM-integrated booking and qualification workflows.",
     },
     {
+      number: "06",
       title: "White-Label Fulfillment",
       description:
-        "Reliable backend delivery for agencies and freelancers who need execution without increasing overhead.",
+        "Reliable backend execution for agencies and freelancers who need delivery capacity without increasing overhead.",
     },
   ];
 
   return (
-    <section id="services" className="py-10 bg-[#070b18]">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
-        <div className="max-w-4xl mb-16">
-          <p className="text-orange-500 uppercase tracking-widest text-sm mb-4">
-            Services
+    <section
+      id="services"
+      className="py-13 border-t border-white/5 bg-[#050816]"
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="max-w-4xl">
+          <p className="text-orange-400 uppercase tracking-[0.3em] text-sm font-medium mb-4">
+            SERVICES
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-[-0.04em] leading-tight text-white">
             Everything Required To Build
-          </h2>
-
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-400 mt-2">
+            <br />
             A Predictable Growth System.
           </h2>
+
+          <p className="mt-4 text-zinc-400 text-lg max-w-2xl leading-relaxed">
+            From lead generation to automation and white-label execution,
+            VAATIRA builds the systems required for sustainable growth.
+          </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+        {/* Services */}
+        <div className="mt-10 border-t border-white/10">
+          {services.map((service) => (
             <div
               key={service.title}
               className="
                 group
-                relative
-                p-8
-                rounded-3xl
-                border
+                py-6
+                border-b
                 border-white/10
-                bg-white/[0.03]
-                hover:border-orange-500/40
-                hover:-translate-y-1
                 transition-all
                 duration-300
+                hover:border-orange-500/20
               "
             >
-              {/* Number */}
-              <div
-                className="
-                w-12
-                h-12
-                rounded-full
-                bg-orange-500
-                text-black
-                flex
-                items-center
-                justify-center
-                font-bold
-                mb-6
-              "
-              >
-                {String(index + 1).padStart(2, "0")}
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                
+                {/* Left Side */}
+                <div className="flex items-center gap-5 min-w-[320px]">
+                  
+                  <span
+                    className="
+                    text-orange-400
+                    text-lg
+                    font-bold
+                    tracking-[0.2em]
+                    "
+                  >
+                    {service.number}
+                  </span>
+
+                  <div className="w-3 h-px bg-white/10" />
+
+                  <h3
+                    className="
+                    text-xl
+                    md:text-xl
+                    font-semibold
+                    text-white
+                    transition-colors
+                    duration-300
+                    group-hover:text-orange-400
+                    "
+                  >
+                    {service.title}
+                  </h3>
+                </div>
+
+                {/* Right Side */}
+                <p
+                  className="
+                  max-w-xl
+                  text-zinc-400
+                  leading-relaxed
+                  transition-colors
+                  duration-300
+                  group-hover:text-zinc-300
+                  "
+                >
+                  {service.description}
+                </p>
               </div>
-
-              <h3 className="text-2xl font-semibold mb-4">
-                {service.title}
-              </h3>
-
-              <p className="text-gray-400 leading-relaxed mb-6">
-                {service.description}
-              </p>
-
-              <button
-                className="
-                text-orange-500
-                font-medium
-                group-hover:translate-x-1
-                transition-transform
-              "
-              >
-                Learn More →
-              </button>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div
-          className="
-          mt-16
-          p-10
-          rounded-3xl
-          border
-          border-white/10
-          bg-gradient-to-r
-          from-[#0b1228]
-          to-[#131b34]
-          text-center
-        "
-        >
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">
-            Need A Custom Growth System?
-          </h3>
+        {/* CTA */}
+        <div className="mt-13 pt-10 border-t border-white/10">
+          <div className="max-w-3xl">
+            <p className="text-zinc-400 text-lg">
+              Need a custom growth system built around your business model,
+              sales process and market?
+            </p>
 
-          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-            Every business is different. We design growth systems around your
-            goals, sales process and market.
-          </p>
-
-          <button
-            className="
-            px-8
-            py-4
-            rounded-full
-            bg-orange-500
-            hover:bg-orange-600
-            transition
-            font-semibold
-            text-black
-          "
-          >
-            Book Consultation
-          </button>
+            <button
+              className="
+              mt-6
+              px-6
+              py-3.5
+              rounded-full
+              bg-orange-500
+              hover:bg-orange-400
+              text-white
+              font-semibold
+              transition-all
+              duration-300
+              "
+            >
+              Schedule Strategy Call →
+            </button>
+          </div>
         </div>
       </div>
     </section>
